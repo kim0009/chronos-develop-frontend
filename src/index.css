@@ -88,7 +88,6 @@ section{
   }
 
 textarea, .form-input, select {
-    line-height: 2.5px;
     display: block;
     border-radius: 3px !important;
     border: 1px solid #c9c9c9;
@@ -97,10 +96,15 @@ textarea, .form-input, select {
     color: #4c4c4c;
     font-size: 15px;
 }
-  
+ 
+.form-input, textarea {
+    padding: 0 20px 0 20px;
+}
+
 select{
     width: 234px;
 }
+
 .form-input{
     padding: 0 20px 0 20px;
     height: 38px;
@@ -130,6 +134,7 @@ label{
 }
 
 textarea {
+    padding-top: 5px;
     width: 234px;
     font-family: inherit;
     font-size: inherit;

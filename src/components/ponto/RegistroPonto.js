@@ -14,7 +14,7 @@ export class RegistroPonto extends Component {
                 descricao: ''
             },
             data: Date.now,
-            horaInicio: '',
+            horaInicio: `${new Date().toLocaleDateString()}T${new Date().toLocaleTimeString()}`,
             horaFim: '',
         };
         
@@ -51,11 +51,11 @@ export class RegistroPonto extends Component {
                 <form onSubmit={this.handleSumit}>
                     <div className="form-group">
                         <label htmlFor="">Hora de Início*</label>
-                        <input className="form-input" value={this.state.formulario.horaInicio} name="horaInicio" onChange={this.handleChange} type="text" />
+                        <input className="form-input" value={this.state.formulario.horaInicio} name="horaInicio" onChange={this.handleChange} type="datetime-local" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Hora Final</label>
-                        <input className="form-input" value={this.state.formulario.horaFim} name="horaFim" onChange={this.handleChange} type="text" />
+                        <input className="form-input" value={this.state.formulario.horaFim} name="horaFim" onChange={this.handleChange} type="datetime-local" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="">Projeto*</label>
