@@ -5,15 +5,15 @@ export class Columns extends Component {
 
     constructor(props) {
         super(props);
-        this.setField = this.setField.bind(this);
+        this.getValue = this.getValue.bind(this);
     }
 
-    setField(entidade, field) {
-        let fields = field.split('.');
-        if(fields.length > 1) {
+    getValue(entidade, field) {
+        if(field.includes(".")) {
+            let fields = field.split('.');
             let prop = fields[0];
             fields.splice(0,1);
-            return this.setField(entidade[prop], fields.join('.'));
+            return this.getValue(entidade[prop], fields.join('.'));
         }
 
         return entidade[field];
@@ -22,12 +22,11 @@ export class Columns extends Component {
     render() {
         return (
             <Fragment>
-
                 {this.props.lista.map(col => {
                     return (
                         <tr className="table-row" key={col.id}>
                             {this.props.columns.map((field, index) =>
-                                <td key={index} className="table-cell">{this.setField(col, field.name)}</td>
+                                <td key={index} className="table-cell">{this.getValue(col, field.name)}</td>
                             )}
                         </tr>)
                 })}

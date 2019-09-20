@@ -105,6 +105,13 @@ select{
     width: 234px;
 }
 
+.data-input {
+    width: 234px;
+}
+
+.hora-input {
+    width: 150px;
+}
 .form-input{
     padding: 0 20px 0 20px;
     height: 38px;
@@ -128,7 +135,6 @@ label{
     color: #99a0a1;
     display: inline-block;
     background-color: #fff;
-    border-bottom: 3px solid #e8e9e9;
     font-size: 16px;
     margin-bottom: -3px;
 }
@@ -142,6 +148,10 @@ textarea {
     overflow: auto;
     height: 70px;
     resize: vertical;
+}
+
+.error {
+    border: 1px red solid;
 }
 
 form{
@@ -241,3 +251,31 @@ td.table-cell{
     vertical-align: inherit;
     text-align: left;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted red; 
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+  }
+ 
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .message-error {
+    color: red;
+    font-size: 12px;
+  }
